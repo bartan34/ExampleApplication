@@ -10,19 +10,12 @@ workflows:
               only:
                 - main
       - deploy:
+          requires:
+            - build
           filters:
             branches:
               only:
                 - main
-          requires:
-            - build
-          steps:
-            - run:
-                name: deploy
-                command:
-                  |
-                  echo "Deploying to production"
-                  echo "Deploying to production"
 
 jobs:
   build:
